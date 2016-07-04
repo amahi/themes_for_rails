@@ -24,6 +24,7 @@ module ThemesForRails
       self.theme_name = name
       if valid_theme?
         add_theme_view_path
+        I18n.backend = ThemesForRails::I18n::Backend.new
       end
     end
     
