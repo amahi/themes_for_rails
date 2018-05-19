@@ -8,14 +8,13 @@ module ThemesForRails
     included do
 
       include ThemesForRails::CommonMethods
-      include ThemesForRails::UrlHelpers
 
     end
 
     module ClassMethods
 
       def theme(name, options = {})
-        before_filter(options) do |controller|
+        before_action(options) do |controller|
           controller.set_theme(name)
         end
       end
@@ -29,4 +28,3 @@ module ThemesForRails
   end
 
 end
-
